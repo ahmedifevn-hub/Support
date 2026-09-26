@@ -1,0 +1,38 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="{{ home_url }}">{% include mark.html %}<span>UARC</span></a>
+        <p>{{ t.tagline }}</p>
+      </div>
+      <nav class="footer-col" aria-labelledby="footer-app">
+        <h2 id="footer-app">{{ t.footer_product }}</h2>
+        <ul>
+          <li><a href="{{ home_url }}#how">{{ t.nav_how }}</a></li>
+          <li><a href="{{ home_url }}#features">{{ t.nav_features }}</a></li>
+          <li><a href="{{ home_url }}#pricing">{{ t.nav_pricing }}</a></li>
+          <li><a href="{{ home_url }}#faq">{{ t.nav_faq }}</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-labelledby="footer-help">
+        <h2 id="footer-help">{{ t.footer_help }}</h2>
+        <ul>
+          <li><a href="{{ t.prefix | append: '/support.html' | relative_url }}">{{ t.support }}</a></li>
+          <li><a href="mailto:{{ site.email }}">{{ t.contact }}</a></li>
+          <li><a href="{{ alt_url }}" hreflang="{{ t.switch_lang }}" lang="{{ t.switch_lang }}" data-lang-switch="{{ t.switch_lang }}">{{ t.switch_to }}</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-labelledby="footer-legal">
+        <h2 id="footer-legal">{{ t.footer_legal }}</h2>
+        <ul>
+          <li><a href="{{ t.prefix | append: '/privacy.html' | relative_url }}">{{ t.privacy }}</a></li>
+          <li><a href="{{ t.prefix | append: '/terms.html' | relative_url }}">{{ t.terms }}</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-base">
+      <p>{{ t.disclaimer }}</p>
+      <p><span dir="ltr">© {{ site.time | date: "%Y" }} {{ site.publisher }}</span> · {{ t.location }}</p>
+    </div>
+  </div>
+</footer>

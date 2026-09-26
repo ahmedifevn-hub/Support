@@ -1,0 +1,53 @@
+# ------------------------------------------------------------------
+#  UARC website settings
+#  GitHub Pages rebuilds the site automatically when this file changes.
+# ------------------------------------------------------------------
+
+title: UARC
+url: "https://uarcapp.xyz"
+baseurl: ""
+
+# Contact email shown on the site (support page, footer, FAQ).
+email: ahmedifevn@gmail.com
+
+# Store links. Paste the full link once the app is live, for example:
+#   app_store_url: "https://apps.apple.com/app/id1234567890"
+# While app_store_url is empty, the site says "Coming soon on the App Store".
+# An empty google_play_url just hides the Google Play button.
+app_store_url: ""
+google_play_url: ""
+
+# Publisher shown in the footer.
+publisher: Ahmed Alaskar
+
+# ------------------------------------------------------------------
+#  Build settings (no need to change these)
+# ------------------------------------------------------------------
+
+theme: null
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+exclude:
+  - README.md
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      lang: en
+  - scope:
+      path: "ar"
+    values:
+      lang: ar

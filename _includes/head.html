@@ -1,0 +1,54 @@
+{%- assign desc = page.description | default: t.description | strip_html | escape -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- if page.ref == "home" %}
+<title>{{ page.title | escape }}</title>
+{%- else %}
+<title>{{ page.title | escape }} · UARC</title>
+{%- endif %}
+<meta name="description" content="{{ desc }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+{%- if page.ref %}
+{%- assign versions = site.pages | where: "ref", page.ref %}
+{%- for v in versions %}
+<link rel="alternate" hreflang="{{ v.lang }}" href="{{ v.url | absolute_url }}">
+{%- if v.lang == "en" %}
+<link rel="alternate" hreflang="x-default" href="{{ v.url | absolute_url }}">
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FBF8F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120F" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="{{ '/assets/img/mark.svg' | relative_url }}" type="image/svg+xml">
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+{%- if page.lang == "ar" %}
+<link rel="preload" href="{{ '/assets/fonts/noto-naskh-arabic.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+{%- else %}
+<link rel="preload" href="{{ '/assets/fonts/fraunces-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+{%- endif %}
+<link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UARC">
+<meta property="og:title" content="{{ page.title | escape }}">
+<meta property="og:description" content="{{ desc }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ t.og_image | absolute_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="{{ t.locale }}">
+<meta name="twitter:card" content="summary_large_image">
+{%- if page.ref == "home" and page.lang == "en" %}
+<script>
+  // First visit from a browser set to Arabic: show the Arabic homepage.
+  // Choosing a language with the switcher is remembered and wins.
+  (function () {
+    try {
+      if (localStorage.getItem("uarc-lang")) return;
+      var l = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+      if (/^ar\b/i.test(l)) location.replace("{{ '/ar/' | relative_url }}");
+    } catch (e) {}
+  })();
+</script>
+{%- endif %}

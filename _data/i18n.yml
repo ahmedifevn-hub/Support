@@ -1,0 +1,89 @@
+# Interface text shared by every page (menu, buttons, footer).
+# Page content lives in the pages themselves: index.html / ar/index.html,
+# support.md / ar/support.md, privacy.md / ar/privacy.md, terms.md / ar/terms.md.
+
+en:
+  dir: ltr
+  locale: en_US
+  prefix: ""
+  home_url: /
+  og_image: /assets/img/og-en.png
+  description: "UARC is an AI fitness coach: an honest weekly verdict, a coach that adapts your training and food, and progress you can trust."
+  skip: Skip to content
+  menu_label: Main
+  nav_how: How it works
+  nav_features: Features
+  nav_privacy: Privacy
+  nav_pricing: Pricing
+  nav_faq: FAQ
+  nav_support: Support
+  get_app: Get the app
+  app_store: Download on the App Store
+  coming_soon: Coming soon on the App Store
+  google_play: Get it on Google Play
+  notify: Email me when it’s out
+  notify_subject: Tell me when UARC is out
+  switch_to: العربية
+  switch_lang: ar
+  tagline: An honest AI fitness coach.
+  footer_product: App
+  footer_help: Help
+  footer_legal: Legal
+  support: Support
+  contact: Contact us
+  privacy: Privacy Policy
+  terms: Terms of Service
+  disclaimer: UARC is not a medical service. Talk to a qualified professional before starting a new training programme or diet.
+  location: Dhahran, Saudi Arabia
+  kicker_help: Help
+  kicker_legal: Legal
+  effective: Effective date
+  contact_title: Contact us
+  contact_body: Email us and we’ll get back to you, usually within 1&#8288;–&#8288;2 business days.
+  contact_button: Email support
+  not_found_title: This page doesn’t exist.
+  not_found_body: The link may be old or mistyped.
+  back_home: Go to the homepage
+
+ar:
+  dir: rtl
+  locale: ar_SA
+  prefix: /ar
+  home_url: /ar/
+  og_image: /assets/img/og-ar.png
+  description: "UARC مدرّب لياقة ذكي: حكم أسبوعي صادق، مدرّب يكيّف تمرينك وأكلك، وتقدّم تثق فيه."
+  skip: انتقل إلى المحتوى
+  menu_label: القائمة الرئيسية
+  nav_how: كيف يعمل
+  nav_features: المزايا
+  nav_privacy: الخصوصية
+  nav_pricing: الأسعار
+  nav_faq: أسئلة شائعة
+  nav_support: الدعم
+  get_app: حمّل التطبيق
+  app_store: حمّل من App Store
+  coming_soon: قريباً على App Store
+  google_play: حمّل من Google Play
+  notify: راسلني عند الإطلاق
+  notify_subject: أبلغوني عند إطلاق UARC
+  switch_to: English
+  switch_lang: en
+  tagline: مدرّب لياقة ذكي وصادق.
+  footer_product: التطبيق
+  footer_help: المساعدة
+  footer_legal: قانوني
+  support: الدعم
+  contact: تواصل معنا
+  privacy: سياسة الخصوصية
+  terms: شروط الخدمة
+  disclaimer: UARC ليس خدمة طبية. راجع مختصاً مؤهلاً قبل أن تبدأ برنامجاً تدريبياً أو نظاماً غذائياً جديداً.
+  location: الظهران، المملكة العربية السعودية
+  kicker_help: المساعدة
+  kicker_legal: قانوني
+  effective: تاريخ السريان
+  contact_title: تواصل معنا
+  contact_body: راسلنا بالإيميل ونرد عليك، عادة خلال يوم إلى يومين عمل.
+  contact_button: راسل الدعم
+  not_found_title: هذه الصفحة غير موجودة.
+  not_found_body: ربما الرابط قديم أو فيه خطأ.
+  back_home: العودة إلى الصفحة الرئيسية

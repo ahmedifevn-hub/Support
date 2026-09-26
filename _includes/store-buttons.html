@@ -1,0 +1,13 @@
+<div class="store-buttons">
+{%- if site.app_store_url and site.app_store_url != "" %}
+  <a class="btn btn-primary btn-lg" href="{{ site.app_store_url }}">{% include icon.html name="phone" %}<span>{{ t.app_store }}</span></a>
+{%- else %}
+  <span class="btn btn-soon btn-lg">{{ t.coming_soon }}</span>
+  {%- if include.notify %}
+  <a class="btn btn-ghost btn-lg" href="mailto:{{ site.email }}?subject={{ t.notify_subject | uri_escape }}">{% include icon.html name="mail" %}<span>{{ t.notify }}</span></a>
+  {%- endif %}
+{%- endif %}
+{%- if site.google_play_url and site.google_play_url != "" %}
+  <a class="btn btn-ghost btn-lg" href="{{ site.google_play_url }}">{% include icon.html name="phone" %}<span>{{ t.google_play }}</span></a>
+{%- endif %}
+</div>

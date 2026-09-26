@@ -1,0 +1,31 @@
+---
+layout: default
+---
+{%- assign t = site.data.i18n[page.lang] -%}
+<main id="main" class="doc">
+  <div class="wrap">
+    <header class="doc-head">
+      <p class="eyebrow">{% if page.kicker == "help" %}{{ t.kicker_help }}{% else %}{{ t.kicker_legal }}{% endif %}</p>
+      <h1 class="display">{{ page.title }}</h1>
+      {%- if page.intro %}
+      <p class="doc-intro">{{ page.intro }}</p>
+      {%- endif %}
+      {%- if page.effective %}
+      <p class="doc-meta">{{ t.effective }}: {{ page.effective }}</p>
+      {%- endif %}
+    </header>
+    {%- if page.contact %}
+    <section class="contact-card" aria-labelledby="contact-title">
+      <div>
+        <h2 id="contact-title">{{ t.contact_title }}</h2>
+        <p>{{ t.contact_body }}</p>
+        <p class="contact-email"><a href="mailto:{{ site.email }}" dir="ltr">{{ site.email }}</a></p>
+      </div>
+      <a class="btn btn-primary" href="mailto:{{ site.email }}">{% include icon.html name="mail" %}<span>{{ t.contact_button }}</span></a>
+    </section>
+    {%- endif %}
+    <article class="prose">
+{{ content }}
+    </article>
+  </div>
+</main>

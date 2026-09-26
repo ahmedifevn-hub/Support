@@ -1,0 +1,28 @@
+---
+title: Page not found
+permalink: /404.html
+sitemap: false
+---
+{%- assign en = site.data.i18n.en -%}
+{%- assign ar = site.data.i18n.ar -%}
+<main id="main" class="doc not-found">
+  <div class="wrap">
+    <header class="doc-head">
+      <p class="eyebrow">404</p>
+      <h1 class="display">{{ en.not_found_title }}</h1>
+      <p>{{ en.not_found_body }}</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="{{ '/' | relative_url }}">{{ en.back_home }}</a>
+        <a class="btn btn-ghost" href="{{ '/support.html' | relative_url }}">{{ en.support }}</a>
+      </div>
+    </header>
+    <div class="not-found-ar" lang="ar" dir="rtl">
+      <h2 class="display">{{ ar.not_found_title }}</h2>
+      <p>{{ ar.not_found_body }}</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="{{ '/ar/' | relative_url }}">{{ ar.back_home }}</a>
+        <a class="btn btn-ghost" href="{{ '/ar/support.html' | relative_url }}">{{ ar.support }}</a>
+      </div>
+    </div>
+  </div>
+</main>

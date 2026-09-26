@@ -1,0 +1,36 @@
+{%- assign c = page.card -%}
+{%- assign chat = page.chat -%}
+<figure class="stage">
+  <div class="vcard">
+    <div class="vcard-top">
+      <span>{{ c.label }}</span>
+      <span class="tag">{{ c.tag }}</span>
+    </div>
+    <p class="vcard-verdict">{{ c.verdict }}</p>
+    <p class="vcard-summary">{{ c.summary }}</p>
+    <dl class="vstats">
+      {%- for s in c.stats %}
+      <div class="vstat">
+        <dt>{{ s.label }}</dt>
+        <dd>{% if s.dots %}<span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span>{% endif %}<span>{{ s.value }}</span></dd>
+      </div>
+      {%- endfor %}
+    </dl>
+    <div class="vchart">
+      <svg viewBox="0 0 320 100" role="img" aria-label="{{ c.chart_label }}">
+        <path class="grid" d="M0 20H320M0 50H320M0 80H320"/>
+        <path class="today" d="M198.2 4V96"/>
+        <polyline class="line" points="20,18 45.5,24 70.9,22 96.4,32 121.8,36 147.3,38 172.7,46 198.2,52"/>
+        <polyline class="line line-est" points="198.2,52 223.6,60 249.1,68 274.5,76 300,84"/>
+        <g class="pts"><circle cx="20" cy="18" r="3"/><circle cx="45.5" cy="24" r="3"/><circle cx="70.9" cy="22" r="3"/><circle cx="96.4" cy="32" r="3"/><circle cx="121.8" cy="36" r="3"/><circle cx="147.3" cy="38" r="3"/><circle cx="172.7" cy="46" r="3"/></g>
+        <circle class="pt-now" cx="198.2" cy="52" r="5.5"/>
+      </svg>
+      <p class="vchart-legend" aria-hidden="true"><span class="legend-solid">{{ c.legend_logged }}</span><span class="legend-dashed">{{ c.legend_estimate }}</span></p>
+    </div>
+  </div>
+  <div class="chat">
+    <p class="bubble bubble-you"><span class="visually-hidden">{{ chat.you_label }}: </span>{{ chat.you }}</p>
+    <p class="bubble bubble-coach"><span class="bubble-name">{{ chat.coach }}</span>{{ chat.reply }}</p>
+  </div>
+  <figcaption class="stage-caption">{{ chat.caption }}</figcaption>
+</figure>

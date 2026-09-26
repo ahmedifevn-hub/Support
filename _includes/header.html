@@ -1,0 +1,16 @@
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="{{ home_url }}">{% include mark.html %}<span>UARC</span></a>
+    <nav class="nav" aria-label="{{ t.menu_label }}">
+      <a href="{{ home_url }}#how">{{ t.nav_how }}</a>
+      <a href="{{ home_url }}#features">{{ t.nav_features }}</a>
+      <a href="{{ home_url }}#privacy">{{ t.nav_privacy }}</a>
+      <a href="{{ home_url }}#pricing">{{ t.nav_pricing }}</a>
+      <a href="{{ t.prefix | append: '/support.html' | relative_url }}">{{ t.nav_support }}</a>
+    </nav>
+    <div class="bar-end">
+      <a class="lang-switch" href="{{ alt_url }}" hreflang="{{ t.switch_lang }}" lang="{{ t.switch_lang }}" data-lang-switch="{{ t.switch_lang }}">{{ t.switch_to }}</a>
+      <a class="btn btn-primary btn-sm" href="{{ get_url }}">{{ t.get_app }}</a>
+    </div>
+  </div>
+</header>
